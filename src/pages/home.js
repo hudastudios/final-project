@@ -1252,11 +1252,10 @@ export default function Home() {
                     </div>
                 </footer>
             </div>
-            <Navbar onClose={() => setIsUserModalOpen(false)} onOpen={() => setIsUserModalOpen(true)}></Navbar>
+            <Navbar onClose={() => setIsUserModalOpen(false)} onOpen={() => setIsUserModalOpen(true)} onOpenSignupModal={() => setSignupModalOpen(true)} onOpenLoginModal={() => setLoginModalOpen(true)} ></Navbar>
             {userModalOpen ? <UserModal onOpenSignupModal={() => setSignupModalOpen(true)} onOpenLoginModal={() => setLoginModalOpen(true)} onClose={() => setIsUserModalOpen(false)}></UserModal> : null}
             {loginModalOpen ? <LoginModal openSignup={() => setSignupModalOpen(true)} onClose={() => setLoginModalOpen(false)}></LoginModal> : null}
             {SignupModalOpen ? <SignupModal openLogin={() => setLoginModalOpen(true)} onClose={() => setSignupModalOpen(false)}></SignupModal> : null}
-            <Navbar onOpenSignupModal={() => setSignupModalOpen(true)} onOpenLoginModal={() => setLoginModalOpen(true)} onClose={() => setIsUserModalOpen(false)}></Navbar>
         </div>
     );
 }
